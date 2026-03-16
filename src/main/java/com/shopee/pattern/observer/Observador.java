@@ -1,4 +1,7 @@
 package com.shopee.pattern.observer;
 
-public class Observador {
+import com.shopee.model.Pedido;
+
+public interface Observador {
+    void atualizar(Pedido pedido, String evento);
 }
