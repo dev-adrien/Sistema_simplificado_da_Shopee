@@ -1,4 +1,4 @@
 package com.shopee.model;
 
-public class Cliente {
+public class Cliente extends Usuario {
 }
