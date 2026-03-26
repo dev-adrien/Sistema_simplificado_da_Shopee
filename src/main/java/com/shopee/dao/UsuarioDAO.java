@@ -43,20 +43,6 @@ public class UsuarioDAO implements DAO<Usuario> {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                /*
-                Usuario usuario;
-                if (rs.getString("tipo").equals("cliente")) {
-                    usuario = new Cliente();
-                }
-            } else {
-                usuario = new Vendedor();
-                usuario.setId(rs.getInt("id"));
-                usuario.setNome(rs.getString("nome"));
-                usuario.setEmail(rs.getString("email"));
-                usuario.setSenha(rs.getString("senha"));
-                usuario.setAtivo(rs.getBoolean("ativo"));
-                return Optional.of(usuario);
-                */
                 return Optional.of(montarUsuario(rs));
             }
         }
@@ -78,7 +64,7 @@ public class UsuarioDAO implements DAO<Usuario> {
     public boolean validarLogin(String email, String senha) throws SQLException {
         Optional<Usuario> usuario = buscarPorEmail(email);
         return usuario.isPresent() && usuario.get().getSenha().equals(senha);
-    } // Outros métodos obrigatórios...
+    }
 
     @Override
     public List<Usuario> buscarTodos() throws SQLException {
