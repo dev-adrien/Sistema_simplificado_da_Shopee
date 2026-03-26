@@ -1,4 +1,4 @@
 package com.shopee.service;
 
-public class PedidoService {
+public class PedidoService  {
 }
