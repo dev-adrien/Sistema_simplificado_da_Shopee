@@ -1,4 +1,10 @@
 package com.shopee.pattern.strategy;
 
-public class PagamentoStrategy {
+import java.math.BigDecimal;
+
+public interface PagamentoStrategy {
+
+    // assinatura do método para processar o pagamento
+    void processarPagamento(BigDecimal valorTotal);
+
 }
