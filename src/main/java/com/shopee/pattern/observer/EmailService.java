@@ -21,14 +21,14 @@ public class EmailService implements Observador {
     }
 
     private void enviarEmailConfirmacao(Pedido p) {
-        System.out.println(" Email: Pedido " + p.getId() + " confirmado!");
+        System.out.println("Email: Pedido " + p.getId() + " confirmado!");
     }
 
     private void enviarEmailPagamento(Pedido p) {
-        System.out.println(" Email: Pagamento aprovado para pedido " + p.getId());
+        System.out.println("Email: Pagamento aprovado para pedido " + p.getId());
     }
 
     private void enviarEmailRastreio(Pedido p) {
-        System.out.println(" Email: Pedido " + p.getId() + " enviado - Código: BR" +  UUID.randomUUID().toString().substring(0, 8).toUpperCase());
+        System.out.println("Email: Pedido " + p.getId() + " enviado - Código: BR" +  UUID.randomUUID().toString().substring(0, 8).toUpperCase());
     }
 }
