@@ -6,7 +6,6 @@ import com.shopee.model.Usuario;
 import com.shopee.model.Vendedor;
 import com.shopee.service.ProdutoService;
 import com.shopee.service.UsuarioService;
-
 import java.util.Scanner;
 
 public class ConsoleApp {
