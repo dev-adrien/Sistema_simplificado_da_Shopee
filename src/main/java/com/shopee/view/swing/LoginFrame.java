@@ -77,7 +77,7 @@ public class LoginFrame extends JFrame {
                 this.dispose();
 
                 // mainframe
-                // new MainFrame(usuarioLogado.get()).setVisible(true);
+                new MainFrame(usuarioLogado.get()).setVisible(true);
 
             } else {
                 JOptionPane.showMessageDialog(this, "E-mail ou senha incorretos!", "Erro", JOptionPane.ERROR_MESSAGE);
