@@ -34,8 +34,14 @@ public class MainFrame extends JFrame {
             JButton btnCadastrarProduto = new JButton("Cadastrar Novo Produto");
             JButton btnMeusProdutos = new JButton("Listar Meus Produtos");
 
-            // ação temporária
-            btnCadastrarProduto.addActionListener(e -> JOptionPane.showMessageDialog(this, "Indo para a tela de cadastro de produtos..."));
+            // ação de cadastrar produto
+            btnCadastrarProduto.addActionListener(e -> {
+                JFrame telaCadastro = new JFrame("Novo Produto");
+                telaCadastro.setSize(400, 300);
+                telaCadastro.setLocationRelativeTo(this);
+                telaCadastro.add(new ProdutoPanel((Vendedor) usuarioLogado));
+                telaCadastro.setVisible(true);
+            });
 
             painelCentro.add(btnCadastrarProduto);
             painelCentro.add(btnMeusProdutos);
