@@ -43,6 +43,8 @@ public class LoginFrame extends JFrame {
         // botão de login
         JPanel painelBotao = new JPanel();
         botaoLogin = new JButton("Entrar");
+        JButton botaoCadastrar = new JButton("Cadastrar-se");
+
 
         // ação de execução do botão
         botaoLogin.addActionListener(new ActionListener() {
@@ -51,7 +53,14 @@ public class LoginFrame extends JFrame {
                 tentarLogar();
             }
         });
+
+        botaoCadastrar.addActionListener(e -> {
+            this.dispose(); // esconde login
+            new CadastroFrame().setVisible(true); // abre tela nova
+        });
+
         painelBotao.add(botaoLogin);
+        painelBotao.add(botaoCadastrar);
 
         // instanciando componentes na tela
         add(painelTopo, BorderLayout.NORTH);
@@ -78,7 +87,6 @@ public class LoginFrame extends JFrame {
 
                 // mainframe
                 new MainFrame(usuarioLogado.get()).setVisible(true);
-
             } else {
                 JOptionPane.showMessageDialog(this, "E-mail ou senha incorretos!", "Erro", JOptionPane.ERROR_MESSAGE);
             }
