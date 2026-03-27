@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class DatabaseConnection {
     private static DatabaseConnection instance;
-    private Connection connection;
+    private static Connection connection;
 
     private DatabaseConnection() { // construtor privado pra não instanciar externamente
         try {
@@ -46,7 +46,7 @@ public class DatabaseConnection {
         return instance;
     }
 
-    public Connection getConnection() { // getter da conexão
+    public static Connection getConnection() { // getter da conexão
         return connection;
     }
 }
